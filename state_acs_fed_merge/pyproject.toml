@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "state_acs_fed_merge"
+version = "0.1.0"
+description = "Package ffor merging annual state-level American Community Survey data with state-level data from the federal reserve."
+authors = ["Sophie Collyer"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "1.5.2"
+"ruamel.yaml" = "0.17.4"
+requests = "^2.31.0"
+prettytable = "^3.9.0"
+numpy = "^1.26.2"
+python-decouple = "^3.8"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+[tool.semantic_release]
+version_variable = "pyproject.toml:version" # version location
+branch = "main"                             # branch to make releases of
+changelog_file = "CHANGELOG.md"             # changelog file
+build_command = "poetry build"              # build dists
+dist_path = "dist/"                         # where to put dists
+upload_to_release = true                    # auto-create GitHub release
+upload_to_pypi = false                      # don't auto-upload to PyPI
+remove_dist = false                         # don't remove dists
+patch_without_tag = true                    # patch release by default
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
