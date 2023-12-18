@@ -119,7 +119,7 @@ def state_acs_fed_merge(state_list =["55", "56"] , years=[2018, 2019], var_list 
     for i in state_list:
         st_abv=statefip_dict.get(i)
         print(st_abv)
-        pd.final_data['State Name'] = np.where(pd.final_data['STATEFIP']==i, st_abv, 0)
+        pd.final_data['State Name'] = np.where(pd.final_data['STATEFIP']==i, st_abv,  pd.final_data['State Name'])
 
     # order columns for export
     cols = list(pd.final_data)
